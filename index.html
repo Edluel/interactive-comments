@@ -5,10 +5,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <link href="/assets/style.css" rel="stylesheet" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600&display=swap');
+    </style>
 
 </head>
 <body>
+    <section>
+        <!--Coment-->
+        <template id="comment-template">
+            <div class="other-comment">
+                <div class="comment-header">
+                    <img alt="avatar">
+                    <h2 class="username"></h2>
+                    <h3 class="user-flag">Você</h3>
+                    <p class="when"></p>
+                </div>
+
+                <div class="comment-txt">
+                    <p class="content"></p>
+                </div>
+
+                <div class="comment-footer">
+                    <div class="score">
+                        <img src="assets/images/icon-plus.svg" alt="upvote">
+                        <p class="counter"></p>
+                        <img src="assets/images/icon-minus.svg" alt="downvote">
+                    </div>
+
+                    <div class="comment-bts">
+                        <a class="reply" href="#">
+                            <img src="assets/images/icon-reply.svg" alt="reply">
+                            Responder
+                        </a>
+
+                        <a class="delete" href="#">
+                            <img src="assets/images/icon-delete.svg" alt="trash-icon">
+                            Apagar
+                        </a>
+
+                        <a class="edit" href="#">
+                            <img src="assets/images/icon-edit.svg" alt="pen-icon">
+                            Editar
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+        </template><!--Other comments-->
+
+
+    <!--indent-->
+    </section><!--Templates section-->
+
+    <section>
+        <div class="post-comment">
+            <form id="comment-form" method="post">
+                <input type="text" placeholder="Adicione um comentário...">
+                <img src="assets/images/avatars/image-juliusomo.png" alt="user-avatar">
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </section><!--Post comment-->
     
+
 
 
 
