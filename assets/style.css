@@ -10,14 +10,13 @@
     --Soft-Red: hsl(358, 79%, 66%);
     --Light-grayish-blue: hsl(239, 57%, 85%);
     --Pale-red: hsl(357, 100%, 86%);
-  
     --Dark-blue: hsl(212, 24%, 26%);
     --Grayish-Blue: hsl(211, 10%, 45%);
     --Light-gray: hsl(223, 19%, 93%);
     --Very-light-gray: hsl(228, 33%, 97%);
     --White: hsl(0, 0%, 100%);
+    --border-radius: 10%;
 }
-
 
 body{
     height: 100%;
@@ -25,3 +24,49 @@ body{
     background-color: var(--Very-light-gray);
 }
 
+/*User comment on main*/
+.post-comment{
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    background-color: var(--White);
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    border-radius: var(--border-radius);
+    margin-bottom: 10%;
+}
+
+.post-comment form{
+    width: 100%;
+}
+
+.post-comment textarea{
+    width: 90%;
+    margin: 5%;
+    height: 25vw;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--Light-gray);
+    resize: none;
+    padding: 2%;
+}
+
+.post-comment textarea::placeholder{
+    padding: 5%;
+}
+
+.post-comment img{
+    object-fit: contain;
+    width: 15%;
+    margin: 0 0 5% 5%; 
+}
+
+.post-comment input{
+    margin: 0 5% 5% 0;
+    cursor: pointer;
+    border: 0;
+    background-color: var(--Moderate-blue);
+    color: var(--White);
+    border-radius: var(--border-radius);
+    width: 30vw;
+}

@@ -12,7 +12,6 @@
 </head>
 <body>
     <section>
-        <!--Coment-->
         <template id="comment-template">
             <div class="other-comment">
                 <div class="comment-header">
@@ -51,22 +50,24 @@
                     </div>
 
                 </div>
-
+                
             </div>
-        </template><!--Other comments-->
 
+        </template><!--Coments-->
 
-    <!--indent-->
     </section><!--Templates section-->
 
     <section>
         <div class="post-comment">
             <form id="comment-form" method="post">
-                <input type="text" placeholder="Adicione um comentário...">
-                <img src="assets/images/avatars/image-juliusomo.png" alt="user-avatar">
-                <button type="submit">Enviar</button>
+                <textarea type="text" placeholder="Adicione um comentário..."></textarea>
+                <div style="display: flex; justify-content: space-between;">
+                    <img src="assets/images/avatars/image-juliusomo.png" alt="user-avatar">
+                    <input type="submit" name="acao" value="Enviar">
+                </div>  
             </form>
         </div>
+
     </section><!--Post comment-->
     
 
