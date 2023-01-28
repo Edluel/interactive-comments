@@ -13,9 +13,9 @@
 <body>
     <section>
         <template id="comment-template">
-            <div class="other-comment">
+            <div class="comment">
                 <div class="comment-header">
-                    <img alt="avatar">
+                    <img class="avatar" alt="avatar">
                     <h2 class="username"></h2>
                     <h3 class="user-flag">Você</h3>
                     <p class="when"></p>
@@ -56,8 +56,14 @@
         </template><!--Coments-->
 
     </section><!--Templates section-->
-
+    
     <section>
+        <div id="comments-section">
+            
+        </div>
+    </section><!--comments board-->
+
+    <section >
         <div class="post-comment">
             <form id="comment-form" method="post">
                 <textarea type="text" placeholder="Adicione um comentário..."></textarea>
@@ -69,11 +75,10 @@
         </div>
 
     </section><!--Post comment-->
-    
 
 
 
 
 
-    <script src="assets/script.js"></script>
+    <script src="./assets/script.js"></script>
 </body>
