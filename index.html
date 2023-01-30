@@ -90,11 +90,11 @@
 
     <section >
         <div class="post-comment">
-            <form id="comment-form" method="post">
+            <form id="comment-form" >
                 <textarea type="text" placeholder="Adicione um comentário..."></textarea>
                 <div style="display: flex; justify-content: space-between;">
                     <img  class="avatar" src="assets/images/avatars/image-juliusomo.png" alt="user-avatar">
-                    <input type="submit" name="acao" value="Enviar">
+                    <input onclick="commentOnPost(event)" type="submit" name="acao" value="Enviar">
                 </div>  
             </form>
         </div>

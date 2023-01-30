@@ -220,3 +220,40 @@ function deleteComment(e) {
 
 }
 
+function commentOnPost(event){
+    event.preventDefault();
+    // Form values
+    const form = document.getElementById('comment-form');
+    const comment = document.querySelector("textarea").value;
+    form.reset();
+
+    //Cloning template and getting template classes
+    const template = document.getElementById('comment-template');
+    const commentsSection = document.getElementById('comments-section');
+
+    const clone = document.importNode(template.content, true);
+    
+    const avatar = clone.querySelector('.avatar');
+    const username = clone.querySelector('.username');
+    const at = clone.querySelector('.when');
+    const content = clone.querySelector('.content');
+    const score = clone.querySelector('.counter');
+    const fix = clone.querySelector('.counter-fix');
+    
+    // Set propoerties
+    avatar.src = 'assets/images/avatars/image-juliusomo.png';
+    username.innerHTML = 'juliusomo';
+    at.innerHTML = 'now';
+    content.innerHTML = comment;
+    score.innerHTML = 0;
+    fix.innerHTML = 0;
+    
+    // Remove reply control
+    const rmRpl = clone.querySelector('.reply');
+    rmRpl.remove();
+    
+    // Add to DOM
+    commentsSection.appendChild(clone);
+
+}
+
