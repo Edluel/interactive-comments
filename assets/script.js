@@ -3,7 +3,6 @@ function addComment(){
     const data = {
         "comments": [
         {
-            "id": 1,
             "content": "Impressive! Though it seems the drag feature could be improved. But overall it looks incredible. You've nailed the design and the responsiveness at various breakpoints works really well.",
             "createdAt": "1 month ago",
             "score": 12,
@@ -17,7 +16,6 @@ function addComment(){
             "replies": []
         },
         {
-            "id": 2,
             "content": "Woah, your project looks awesome! How long have you been coding for? I'm still new, but think I want to dive into React as well soon. Perhaps you can give me an insight on where I can learn React? Thanks!",
             "createdAt": "2 weeks ago",
             "score": 5,
@@ -30,7 +28,6 @@ function addComment(){
             },
             "replies": [
             {
-                "id": 3,
                 "content": "If you're still new, I'd recommend focusing on the fundamentals of HTML, CSS, and JS before considering React. It's very tempting to jump ahead but lay a solid foundation first.",
                 "createdAt": "1 week ago",
                 "score": 4,
@@ -44,7 +41,6 @@ function addComment(){
                 }
             },
             {
-                "id": 4,
                 "content": "I couldn't agree more with this. Everything moves so fast and it always seems like everyone knows the newest library/framework. But the fundamentals are what stay constant.",
                 "createdAt": "2 days ago",
                 "score": 2,
@@ -58,6 +54,19 @@ function addComment(){
                 }
             }
             ]
+        },
+        {
+            "content": "The most important thing is to code every day.",
+            "createdAt": "1 month ago",
+            "score": 7,
+            "user": {
+            "image": { 
+                "png": "assets/images/avatars/image-juliusomo.png",
+                "webp": "assets/images/avatars/image-juliusomo.webp"
+            },
+            "username": "juliusomo"
+            },
+            "replies": []
         }
         ]
     }
@@ -72,6 +81,7 @@ function addComment(){
         const at = clone.querySelector('.when');
         const content = clone.querySelector('.content');
         const score = clone.querySelector('.counter');
+        const fix = clone.querySelector('.counter-fix');
 
         // Set propoerties
         avatar.src = data.comments[i].user.image.png;
@@ -79,6 +89,7 @@ function addComment(){
         at.innerHTML = data.comments[i].createdAt;
         content.innerHTML = data.comments[i].content;
         score.innerHTML = data.comments[i].score;
+        fix.innerHTML = data.comments[i].score;
 
         // Choose controls
         if (data.comments[i].user.username !== "juliusomo") {
@@ -109,15 +120,17 @@ function addComment(){
                 const at = clone.querySelector('.when');
                 const content = clone.querySelector('.content');
                 const score = clone.querySelector('.counter');
+                const fix = clone.querySelector('.counter-fix');
                 const reply = clone.querySelector('.replyingTo');
                 // Set propoerties
                 avatar.src = data.comments[i].replies[j].user.image.png;
                 username.innerHTML = data.comments[i].replies[j].user.username;
                 at.innerHTML = data.comments[i].replies[j].createdAt;
-                content.innerHTML = data.comments[i].replies[j].content;
                 score.innerHTML = data.comments[i].replies[j].score;
+                fix.innerHTML = data.comments[i].replies[j].score;
                 reply.innerHTML = '@';
                 reply.innerHTML += data.comments[i].replies[j].replyingTo;
+                content.innerHTML += data.comments[i].replies[j].content;
                 // Choose controls
                 if (data.comments[i].replies[j].user.username !== "juliusomo") {
                     const rmDel = clone.querySelector('.delete');
@@ -138,3 +151,72 @@ function addComment(){
     }
 }
 addComment();
+
+function scoreIterator(e){
+   // Get clicked element
+    const click = e.target;
+    let parent;
+    if (click.closest('.reply-comment')) {
+        parent = click.closest('.reply-comment');
+    } else {
+        parent = click.closest('.comment');
+    }
+    
+    // Get counter value
+    const fixed = parent.querySelector('.counter-fix');
+    const ref = parseInt(fixed.textContent);
+    const counter = parent.querySelector('.counter');
+    let value = parseInt(counter.textContent);
+
+    // Compare if it is increment or decrement
+    if(click.classList.contains('increment') && value <= ref){
+        value += 1;
+    } else if(click.classList.contains('decrement') && value >= ref){
+        value -= 1;
+    }
+
+    // Update counter
+    counter.textContent = value;
+}
+
+function deleteComment(e) {
+    // Change focus to delete screen
+    let filter = document.querySelector('.gray-overlay');
+    filter.style.display = 'block';
+    let confirmWindow = document.querySelector('.confirm-window');
+    confirmWindow.style.display = 'flex';
+    // Get clicked element
+    const click = e.target;
+    let parent;
+    if (click.closest('.reply-comment')) {
+        parent = click.closest('.reply-comment');
+
+    } else {
+        parent = click.closest('.comment');
+    }
+    // Get bt element
+    const cancelBt =document.querySelector('.cancel-bt');
+    const confirmBt =document.querySelector('.delete-bt');
+    // Cancel
+    function closeConfirmWindow() {
+        filter.style.display = 'none';
+        confirmWindow.style.display = 'none';
+    }
+    cancelBt.addEventListener("click", function(event) {
+        event.preventDefault();
+        closeConfirmWindow();
+    });
+    // Confirm
+    function confirmDelete(){
+        parent.remove();
+        closeConfirmWindow();
+    }
+    confirmBt.addEventListener("click", function(event) {
+        event.preventDefault();
+        confirmDelete();
+    });
+    
+
+
+}
+

@@ -31,11 +31,12 @@
                 <div class="comment-footer">
                     <div class="score">
                         <div>
-                            <img src="assets/images/icon-plus.svg" alt="upvote">
+                            <img class="increment" src="assets/images/icon-plus.svg" alt="upvote" onclick="scoreIterator(event)">
                         </div>
                         <p class="counter"></p>
+                        <p style="display: none" class="counter-fix"></p>
                         <div>
-                            <img class="decrement" src="assets/images/icon-minus.svg" alt="downvote">
+                            <img class="decrement" src="assets/images/icon-minus.svg" alt="downvote" onclick="scoreIterator(event)">
                         </div>
                     </div>
 
@@ -45,7 +46,7 @@
                             Responder
                         </a>
 
-                        <a class="delete" href="#" onclick="deleteComment()">
+                        <a class="delete" href="#" onclick="deleteComment(event)">
                             <img src="assets/images/icon-delete.svg" alt="trash-icon">
                             Apagar
                         </a>
@@ -69,6 +70,23 @@
             
         </div>
     </section><!--comments board-->
+
+    <section>
+        <div>
+            <div class="gray-overlay"></div>
+            <div class="confirm-window">
+                <h2>Apagar comentário</h2>
+                <p>Tem certeza que deseja apagar este comentário? 
+                    Está ação irá remover o comentário e não poderá ser disfeita.
+                </p>
+                <div class="confirm-win-bts">
+                    <a class="cancel-bt" href="#">Não, Cancelar</a>
+                    <a class="delete-bt" href="#">Sim, Apagar</a>
+                </div>
+            </div>
+        </div><!--Delete screen-->
+
+    </section><!--Delete, Edit screens-->
 
     <section >
         <div class="post-comment">

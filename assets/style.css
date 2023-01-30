@@ -99,7 +99,7 @@ a {
 .reply-comment::before {
     content: "";
     border-left: 1px solid var(--Light-grayish-blue);
-    height: 40%;
+    height: 30%;
     position: absolute;
     left: 3vw;
     align-self: center;
@@ -172,5 +172,54 @@ a {
 .reply, .edit{color: var(--Moderate-blue);}
 .delete{color: var(--Soft-Red)}
 
+/* Delet screen */
+.gray-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--Light-grayish-blue);
+    opacity: 0.5;
+    z-index: 1;
+}
 
+.confirm-window {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--White);
+    border-radius: var(--border-radius);
+    padding: 5vw;
+    z-index: 2;
+    width: 90vw;
+    height: 60vw;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.confirm-window p{color: var(--Grayish-Blue);}
 
+.confirm-win-bts{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.confirm-win-bts a{
+    color: var(--White);
+    font-weight: 500;
+    border-radius: var(--border-radius);
+    padding: 0.8rem;
+    font-size: 1.1rem;
+}
+
+.cancel-bt{
+    background-color: var(--Grayish-Blue);
+}
+
+.delete-bt{
+    background-color: var(--Soft-Red);
+}
