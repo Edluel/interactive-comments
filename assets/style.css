@@ -16,12 +16,18 @@
     --Very-light-gray: hsl(228, 33%, 97%);
     --White: hsl(0, 0%, 100%);
     --border-radius: 10%;
+    font-size: 16px;    
 }
+
 
 body{
     height: 100%;
     width: 100%;
     background-color: var(--Very-light-gray);
+}
+
+a {
+    text-decoration: none;
 }
 
 /*User comment on main*/
@@ -56,9 +62,12 @@ body{
 }
 
 .post-comment img{
-    object-fit: contain;
-    width: 13vw;
     margin: 0 0 5% 5%; 
+}
+
+.avatar{
+    object-fit: contain;
+    width: 10vw;
 }
 
 .post-comment input{
@@ -72,6 +81,16 @@ body{
 }
 
 /* Comments section */
+.comment {
+    display: flex;
+    background-color: var(--White);
+    border-radius: var(--border-radius);
+    margin: 5vw 3vw 0 3vw;
+    flex-direction: column;
+    padding: 5vw;
+    font-family: var();
+}
+
 .reply-comment{
     margin-left: 7vw;
     margin-right: 3vw;
@@ -80,20 +99,78 @@ body{
 .reply-comment::before {
     content: "";
     border-left: 1px solid var(--Light-grayish-blue);
-    height: 50%;
+    height: 40%;
     position: absolute;
     left: 3vw;
+    align-self: center;
 }
 
-.comment {
+.comment-header {
     display: flex;
-    background-color: var(--White);
-    width: 90%;
-    border-radius: var(--border-radius);
-    margin-top: 5%;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 0.2rem;
 }
 
-.avatar{
-    object-fit: contain;
-    width: 13vw;
+.username {
+    font-size: 1.2rem;
 }
+
+.user-flag {
+    color: var(--White);
+    background-color: var(--Moderate-blue);
+    padding: 0 0.3rem 0 0.3rem;
+    font-size: 0.8rem;
+    border-radius: var(--border-radius);
+    height: 1.2rem;
+    font-weight: 500;
+}
+
+.when{
+    color: var(--Grayish-Blue);
+}
+
+.replyingTo{
+    color: var(--Moderate-blue);
+    font-weight: 600;
+}
+
+.content{
+    color: var(--Grayish-Blue);
+    font-weight: 400;
+}
+
+.comment-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+
+.score {
+    display: flex;
+    flex-direction: row;
+    background-color: var(--Light-gray);
+    padding: 0.3rem 0.6rem 0.3rem 0.6rem;
+    border-radius: var(--border-radius);
+}
+
+.counter{
+    padding: 0 0.6rem 0 0.6rem;
+}
+
+.decrement{
+    position: relative;
+    top: -5px;
+}
+
+.reply, .delete, .edit{
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding-left: 0.5rem;
+}
+.reply, .edit{color: var(--Moderate-blue);}
+.delete{color: var(--Soft-Red)}
+
+
+

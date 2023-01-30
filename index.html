@@ -23,24 +23,29 @@
                 </div>
 
                 <div class="comment-txt">
-                    <a class="replyingTo" href="#"></a>
-                    <p class="content"></p>
+                    <p class="content">
+                        <a class="replyingTo" href="#"></a>
+                    </p>
                 </div>
 
                 <div class="comment-footer">
                     <div class="score">
-                        <img src="assets/images/icon-plus.svg" alt="upvote">
+                        <div>
+                            <img src="assets/images/icon-plus.svg" alt="upvote">
+                        </div>
                         <p class="counter"></p>
-                        <img src="assets/images/icon-minus.svg" alt="downvote">
+                        <div>
+                            <img class="decrement" src="assets/images/icon-minus.svg" alt="downvote">
+                        </div>
                     </div>
 
                     <div class="comment-bts">
                         <a class="reply" href="#">
-                            <img src="assets/images/icon-reply.svg" alt="reply">
+                            <img src="assets/images/icon-reply.svg" alt="reply" >
                             Responder
                         </a>
 
-                        <a class="delete" href="#">
+                        <a class="delete" href="#" onclick="deleteComment()">
                             <img src="assets/images/icon-delete.svg" alt="trash-icon">
                             Apagar
                         </a>
@@ -70,7 +75,7 @@
             <form id="comment-form" method="post">
                 <textarea type="text" placeholder="Adicione um comentário..."></textarea>
                 <div style="display: flex; justify-content: space-between;">
-                    <img src="assets/images/avatars/image-juliusomo.png" alt="user-avatar">
+                    <img  class="avatar" src="assets/images/avatars/image-juliusomo.png" alt="user-avatar">
                     <input type="submit" name="acao" value="Enviar">
                 </div>  
             </form>
