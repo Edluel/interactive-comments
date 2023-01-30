@@ -57,7 +57,7 @@ body{
 
 .post-comment img{
     object-fit: contain;
-    width: 15%;
+    width: 13vw;
     margin: 0 0 5% 5%; 
 }
 
@@ -69,4 +69,31 @@ body{
     color: var(--White);
     border-radius: var(--border-radius);
     width: 30vw;
+}
+
+/* Comments section */
+.reply-comment{
+    margin-left: 7vw;
+    margin-right: 3vw;
+}
+
+.reply-comment::before {
+    content: "";
+    border-left: 1px solid var(--Light-grayish-blue);
+    height: 50%;
+    position: absolute;
+    left: 3vw;
+}
+
+.comment {
+    display: flex;
+    background-color: var(--White);
+    width: 90%;
+    border-radius: var(--border-radius);
+    margin-top: 5%;
+}
+
+.avatar{
+    object-fit: contain;
+    width: 13vw;
 }
