@@ -370,6 +370,7 @@ function editComment(e) {
         const comment = document.querySelector("textarea").value;
         form.reset();
 
+
         // If it contains text Add to DOM
         if (comment){
             if (click.closest('.reply-comment')) {
