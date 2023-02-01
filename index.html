@@ -41,7 +41,7 @@
                     </div>
 
                     <div class="comment-bts">
-                        <a class="reply" href="#">
+                        <a class="reply" href="#" onclick="answerComment(event)">
                             <img src="assets/images/icon-reply.svg" alt="reply" >
                             Responder
                         </a>
@@ -51,7 +51,7 @@
                             Apagar
                         </a>
 
-                        <a class="edit" href="#">
+                        <a class="edit" href="#" onclick="editComment(event)">
                             <img src="assets/images/icon-edit.svg" alt="pen-icon">
                             Editar
                         </a>
@@ -94,7 +94,9 @@
                 <textarea type="text" placeholder="Adicione um comentário..."></textarea>
                 <div style="display: flex; justify-content: space-between;">
                     <img  class="avatar" src="assets/images/avatars/image-juliusomo.png" alt="user-avatar">
-                    <input onclick="commentOnPost(event)" type="submit" name="acao" value="Enviar">
+                    <input class="send-comment-bt" onclick="commentOnPost(event)" type="submit" name="acao" value="Enviar">
+                    <input class="send-answer-bt" type="submit" name="acao" value="Responder" style="display: none;">
+                    <input class="send-edit-bt" type="submit" name="acao" value="Editar" style="display: none;">
                 </div>  
             </form>
         </div>
