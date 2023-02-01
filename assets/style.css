@@ -88,7 +88,6 @@ a {
     margin: 5vw 3vw 0 3vw;
     flex-direction: column;
     padding: 5vw;
-    font-family: var();
 }
 
 .reply-comment{
@@ -224,3 +223,39 @@ a {
     background-color: var(--Soft-Red);
 }
  
+@media screen and (min-width: 600px){
+    body{
+        width: 600px;
+        margin: 0 auto; 
+        overflow-x: hidden;
+    }
+
+    .post-comment{
+        width: 520px;
+        height: 200px;
+    }
+
+    
+    .post-comment textarea{
+        width: 90%;
+        margin: 5%;
+        height: 100px;
+        border-radius: var(--border-radius);
+        border: 1px solid var(--Light-gray);
+        resize: none;
+        padding: 2%;
+    }
+
+    .post-comment input{
+        width: 100px;
+        position: relative;
+        top: -15px;
+    }
+    
+    .avatar{
+        width: 50px;
+        position: relative;
+        top: -14px;
+    }
+
+}
