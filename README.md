@@ -44,11 +44,11 @@ Here are some screenshots of the page clone in action:<br>
 
 ## <a id="contributing">Contributing</a>
 
-Feel free to submit pull requests or issues if you have suggestions for improvements. This is a practice project and ani feedback is welcome.
+Feel free to submit pull requests or issues if you have suggestions for improvements. This is a practice project and any feedback is welcome.
 
 
 ## <a id="license">License</a>
 
-This projecti is lencensed under MIT License.
+This project is licensed under MIT License.
 
 
